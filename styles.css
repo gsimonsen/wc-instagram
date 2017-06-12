@@ -1,0 +1,56 @@
+/* Reset issue where padding isn't included in dimensions of an element */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    background: #dbd9d9;
+    margin: 0;
+
+}
+.inner{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+       
+}
+header {
+    background: #fff;
+    padding: 1em 0;
+    
+    
+}
+.header__logo {
+    font-size: 2em;
+    font-family: 'Cookie', sans-serif;
+    
+}
+/* Profile Area Styles */
+.profile__image{
+    /*border: 4px solid red;*/
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+.button {
+    color:#4090db;
+    text-decoration: none;
+    border: 2px solid currentColor;
+    padding: .5em 1em;
+}
+.button--blue {
+    background: blue;
+    color: #fff;
+    border-color: blue;
+   /* border-radius: 8px;*/
+}
+
+
+
