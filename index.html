@@ -7,13 +7,16 @@
     <title>Instagram-GG</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Handlee|Cursive|Arial|Serif" rel="stylesheet">    
 </head>
 <body>
     <header>
         <div class="inner">
             <div class="header__logo">Instagram</div>
-            <div>
+            <div class="header__search">
+            
                 <input type="text" placeholder="e.g. People">
+            
             </div>
             <div>
                 <a href="#" class="button button--blue">Get the app</a>
@@ -31,14 +34,51 @@
             <div class="profile__info">
                 <h2>Username</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum suscipit blanditiis mollitia excepturi et consequatur.</p>
-                <a href="https://northeast.edu">https://northeast.edu</a>
-                <ul>
-                    <li>100 Posts</li>
-                    <li>789 Followers</li>
-                    <li>50 Following</li>
+                <a href="https://northeast.edu" class="link">https://northeast.edu </a>
+                <ul class="profile__meta">
+                    <li><strong>100</strong> Posts</li>
+                    <li><strong>789</strong> Followers</li>
+                    <li><strong>50</strong> Following</li>
                 </ul>
             </div>
          </div>
     </div>
+
+    <!--Images-->
+    <div class="images">
+        <div class="inner">
+            <a href="" class="image">
+                <img src="http://unsplash.it/300/?image=99" alt="">
+                <span class="image__cover">View Image</span>
+            </a>
+            <a href="" class="image">
+                <img src="http://unsplash.it/300/?image=401" alt="">
+                <span class="image__cover">View Image</span>
+            </a>
+            <a href="" class="image">
+                <img src="http://unsplash.it/300/?random" alt="">
+                <span class="image__cover">View Image</span>
+            </a>
+            <a href="" class="image">
+                <img src="http://unsplash.it/300/?image=605" alt="">
+                <span class="image__cover">View Image</span>
+            </a>
+            <a href="" class="image">
+                <img src="http://unsplash.it/300/?image=701" alt="">
+                <span class="image__cover">View Image</span>
+            </a>
+        </div>
+        <script> 
+            window.addEventListener('scroll', function(){
+                var distance = window.pageYOffset || document.documentElement.scrollTop
+                var header = document.querySelector('header')
+                if(distance > 200) {
+                    header.classList.add('header--small')
+                } else {
+                    header.classList.remove('header--small')
+                }
+            })
+        </script>
+
 </body>
 </html>

@@ -7,8 +7,9 @@ html {
     box-sizing: inherit;
 }
 body {
-    background: #dbd9d9;
+    background: lightgoldenrodyellow;
     margin: 0;
+    font-family: 'Handlee', cursive;
 
 }
 .inner{
@@ -17,28 +18,105 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-       
+} 
+.images .inner{
+    flex-wrap: wrap;
+}  
+@supports(display:grid) or (display: -ms-grid) {
+    .images .inner {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-gap: 3em;
+    }
 }
+
+.image {
+    position: relative;
+    line-height: 0;
+    overflow: hidden;
+    
+}
+.image__cover {
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding-top: calc(50% - .5em);
+    transition: top .5s, background 1s;
+
+}
+
+/* any .image__cover that's inside a hoavered .image should move back to the top     */
+ .image:hover .image__cover {
+     top: 0;
+     background: rgba(0, 0, 0, .5);
+ }
+
+
 header {
     background: #fff;
     padding: 1em 0;
-    
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: padding .5s;
 }
+
+.header--small {
+    padding: 0 0;
+}
+
 .header__logo {
     font-size: 2em;
     font-family: 'Cookie', sans-serif;
     
+    
 }
 /* Profile Area Styles */
+.profile {
+    margin-top: 100px;
+    margin-bottom: 2em;
+}
 .profile__image{
     /*border: 4px solid red;*/
     border-radius: 50%;
     overflow: hidden;
     width: 200px;
     height: 200px;
+    flex: 0 0 200px;
 }
+.profile__info {
+    flex: 1 1 auto;
+    margin-left: 2em;
+}
+.link {
+    text-decoration: none;
+    color: red;
+}
+.link:hover {
+    text-decoration: underline;
+}
+.link:before {
+    content: "😁";
+}
+.profile__meta {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.profile__meta li {
+    margin-right: 2em;
+}
+
 .button {
     color:#4090db;
     text-decoration: none;
@@ -51,6 +129,41 @@ header {
     border-color: blue;
    /* border-radius: 8px;*/
 }
+img {
+    max-width: 100%;
+}
+@media(max-width:1000px){
+    .inner {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+@media(max-width:630px){
+    .images .inner {
+        -ms-grid-template-columns: 1fr 1fr;
+        grid-template-columns:1fr 1fr;
+        grid-gap: 3em;
+}
+    .profile .inner {
+        flex-direction: column;
+    }
+
+    .profile__image {
+        width: 100px;
+        height: 100px;
+        flex: 0 0 100px;
+    }
+    
+    header .inner{
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+    
+    .header__search {
+        order: 1;
+    }
+
 
 
 
