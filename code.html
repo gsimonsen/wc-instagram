@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button id="myButton">Click Me!</button>
+
+
+    <script>
+      //  var myButton = document.getElementById('myButton')
+            var myButton = document.querySelector('#myButton')
+            var myInput = document.querySelector('input')
+            myButton.addEventListener('click', function(){
+                //var message = 'You typed:' + myInput.value
+                message = `You typed: ${myInput.value}`
+                console.log(message)
+            })
+        
+        //New Var Declarations
+            const name = 'Gigi'
+            let city = 'Manhattan'
+            console.log(name)
+            console.log(city)
+
+
+
+        /**** FUN with FUNCTIONS ***/
+
+
+        ///Make a function named getName that has no parameters
+
+            function getName(){
+
+            }
+
+        //Make the same function, but using"assignment" syntax
+            
+            var getName2 = function(){
+
+            }
+
+        //Make a funciton, using the "assignment" syntax
+        //The function name is addNumbers and it has TWO
+        // Parameters num1 and num2
+        //Have the function return the sum of the numbers
+        
+            var addNumbers = function(num1, num2){
+                let total = num1 + num2
+                return total
+            }
+
+            let sum = addNumbers(1, 2)
+            console.log(sum)
+
+        //Just like above make a multNumbers function
+        // Passed TWO parameters: num1 and num2
+        // It returns the product of those numbers
+        //Now declaring it as an arrow function
+
+            var multNumbers = (num1, num2) =>{
+                return num1 * num2
+            }
+            
+            let product = multNumbers(2, 4)
+            console.log(product)
+
+
+        //USING ARROW FUNCTIONS
+        //Make a function named double which is passed
+        //ONE parameter called num and returns num * 2
+
+            var double = (num) => {
+                return num * 2
+            }
+
+            let answer = double(10)
+            console.log(answer)
+
+        //Make a triple function just like double
+        //Use shorter syntax
+        //If one variable: no parenthesis are needed
+        //If the only statement is a return statement, you
+        //don't need curly braces or the "reutrn" word
+
+            var triple = num =>  num * 3
+            console.log( triple(10) )
+
+
+
+
+
+    </script>
+</body>
+</html>

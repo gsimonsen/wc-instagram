@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loading Data</title>
+</head>
+<body>
+    <script>
+        //Use fetch() to load remote data
+        fetch('http://unsplash.it/list')
+        .then(result => {
+            return result.json() //convert the text into JSON data
+        })
+
+        .then(result => {
+            //Now that we have the data, we can work with it
+            //Initializing and empty array to hold our random numbers
+            
+            let randoms = []
+            // Loop 20 times, each time putting a random number in the array
+            for(let i=0; i<20; i++){
+                //Generate Random: Math.round(Math.random()* N)
+                randoms.push(Math.round(Math.random()*result.length))
+            }
+            //Make an images array to store our random images
+            let images = result.filter(image => {
+                return randoms.includes(image.id)
+            })
+            console.log(randoms,images)
+        })
+
+       /* .catch(error => {
+           console.error('Something went wrong!!! You are a DORK!')
+        })*/
+
+      /* function promise1(){
+           return new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   console.log('first')
+                   resolve()
+               }, 4000)
+           })
+       }
+       function promise2(){
+           return new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   console.log('second')
+                   resolve()
+               }, 6000)
+           })
+       }function promise3(){
+           return new Promise(function(resolve, reject){
+               setTimeout(function(){
+                   console.log('third')
+                   resolve()
+               }, 2000)
+           })
+       }  
+
+       promise1()   
+       .then(promise2)
+       .then(promise3)
+       .then(function(){
+            console.log('Done')
+       })
+       /*Promise.all([promise1, promise2, promise3])
+       .catch(function(error){
+           console.log('something went wrong!')
+       })*/
+    </script>
+</body>
+</html>
