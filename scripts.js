@@ -34,7 +34,7 @@ function addErrorEvents(){
     images.forEach(function(image, index){
         image.addEventListener('error', function(){
            // const next = Math.round(Math.random()*1000)
-            this.src = `http://unsplash.it/300/?image=336`
+            this.src = `https://unsplash.it/300/?image=336`
             //console.log('error...ahhh...help!')
         })   
     })
@@ -45,7 +45,7 @@ const showFullImage = id => {
     const fullContainer = document.querySelector('.full')// the div
     const fullImage = fullContainer.querySelector('img')//the image in the div
     //Set the src of the fullImage to be a bigger version
-    fullImage.src = `http://unsplash.it/600/?image=${id}`
+    fullImage.src = `https://unsplash.it/600/?image=${id}`
 
     //Remove the hidden class from the fullContainer to show it
     fullContainer.classList.remove('hidden')
@@ -57,13 +57,13 @@ const showFullImage = id => {
     })
 
 
-//Load Data from http://unsplash.it/list
+//Load Data from https://unsplash.it/list
 //then convert to JSON
 //THEN grab 20 random images
 //then add images to HTML and call addClickEvents()
 // to test console.log('Ready To Show Image')
 
-fetch('http://unsplash.it/list')
+fetch('https://unsplash.it/list')
         .then(result => {
             return result.json() //convert the text into JSON data
         })
@@ -98,7 +98,7 @@ fetch('http://unsplash.it/list')
             //maybe just console.log something to make sure it's working
             imageArray.forEach( (image, index) => {
                 const html = `<a href="" class="image">
-                <img src="http://unsplash.it/300/?image=${image.id}" alt="${image.author}">
+                <img src="https://unsplash.it/300/?image=${image.id}" alt="${image.author}">
                 <span class="image__cover">View Image</span>
             </a>`
                 imageContainer.innerHTML += html                
@@ -110,7 +110,7 @@ fetch('http://unsplash.it/list')
 
 /*
 <a href="" class="image">
-                <img src="http://unsplash.it/300/?image=99" alt="">
+                <img src="https://unsplash.it/300/?image=99" alt="">
                 <span class="image__cover">View Image</span>
             </a>
 
